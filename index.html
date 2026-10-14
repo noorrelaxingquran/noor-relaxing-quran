@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07172f">
+  <meta name="description" content="Noor Relaxing Quran — listen to beautiful Quran recitations and find peace.">
+  <title>Noor Relaxing Quran | Listen to the Holy Quran</title>
+  <style>
+    :root {
+      --navy: #07172f;
+      --navy2: #0c2344;
+      --panel: #102a4a;
+      --gold: #e6c779;
+      --gold2: #f7e6ad;
+      --text: #f7f8fb;
+      --muted: #bdc9d9;
+      --line: rgba(230,199,121,.22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at top, #12335b 0, var(--navy) 56%, #040d1d 100%);
+      line-height: 1.6;
+    }
+    a { color: var(--gold2); }
+    .wrap { width: min(1100px, 92%); margin: auto; }
+    header { border-bottom: 1px solid var(--line); background: rgba(5,16,34,.7); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px; }
+    .logo { display:grid; place-items:center; width:46px; height:46px; border:1px solid var(--gold); border-radius:50%; color:var(--gold); font-size:25px; }
+    .brand small { display:block; color:var(--muted); font-size:11px; font-weight:500; letter-spacing:1.6px; }
+    nav a { text-decoration:none; margin-left:18px; font-size:14px; }
+    .hero { padding:64px 0 38px; text-align:center; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:3px; font-size:12px; font-weight:700; }
+    h1 { font-size:clamp(34px, 6vw, 62px); line-height:1.12; margin:14px 0; }
+    h1 span { color:var(--gold2); }
+    .intro { max-width:670px; margin:0 auto 24px; color:var(--muted); }
+    .button { display:inline-flex; justify-content:center; align-items:center; border:0; border-radius:999px; padding:12px 20px; background:linear-gradient(135deg,var(--gold2),var(--gold)); color:#13203a; font-weight:800; text-decoration:none; cursor:pointer; }
+    .outline { border:1px solid var(--line); background:transparent; color:var(--gold2); margin-left:8px; }
+    .player-card { max-width:760px; margin:18px auto 0; padding:24px; text-align:left; background:linear-gradient(145deg,rgba(19,48,82,.96),rgba(8,25,48,.98)); border:1px solid var(--line); border-radius:24px; box-shadow:0 24px 70px rgba(0,0,0,.25); }
+    .player-top { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .kicker { color:var(--gold); font-size:12px; text-transform:uppercase; letter-spacing:1.8px; }
+    h2 { margin:4px 0 0; font-size:23px; }
+    .selects { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+    label { display:block; color:var(--muted); font-size:13px; margin-bottom:7px; }
+    select { width:100%; padding:12px; color:var(--text); background:#07172f; border:1px solid var(--line); border-radius:12px; font:inherit; }
+    .controls { display:flex; align-items:center; gap:14px; }
+    .play { width:54px; height:54px; border-radius:50%; border:0; background:var(--gold); color:#07172f; font-size:21px; cursor:pointer; flex-shrink:0; }
+    .track { flex:1; min-width:0; }
+    audio { width:100%; height:38px; margin-top:8px; }
+    .status { min-height:24px; margin-top:10px; color:var(--muted); font-size:13px; }
+    .section { padding:42px 0; }
+    .section-title { text-align:center; margin-bottom:24px; }
+    .section-title h2 { font-size:30px; }
+    .section-title p { color:var(--muted); margin:6px 0 0; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .feature { padding:22px; border-radius:18px; background:rgba(16,42,74,.7); border:1px solid var(--line); }
+    .feature .icon { font-size:27px; }
+    .feature h3 { margin:8px 0 4px; color:var(--gold2); }
+    .feature p { color:var(--muted); font-size:14px; margin:0; }
+    .surah-list { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .surah { text-align:left; color:var(--text); background:rgba(16,42,74,.7); border:1px solid var(--line); padding:14px 16px; border-radius:14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .surah:hover { border-color:var(--gold); }
+    .surah small { color:var(--muted); display:block; }
+    .arabic { font-size:21px; color:var(--gold2); }
+    .notice { color:var(--muted); font-size:13px; text-align:center; margin:18px auto 0; max-width:760px; }
+    footer { margin-top:30px; padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; text-align:center; }
+    @media (max-width:700px) {
+      .nav { align-items:flex-start; } nav { display:none; }
+      .hero { padding-top:44px; }
+      .player-card { padding:18px; }
+      .selects, .features, .surah-list { grid-template-columns:1fr; }
+      .player-top { align-items:flex-start; }
+      .outline { margin:10px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><img src="main-logo.jpg" alt="Noor Relaxing Quran logo" style="width:46px;height:46px;object-fit:cover;border-radius:50%;border:1px solid var(--gold)"><div>Noor Relaxing Quran<small>LISTEN • RELAX • REFLECT</small></div></div>
+      <nav><a href="#listen">Listen</a><a href="#surahs">Surah List</a><a href="#about">About</a><a href="#global">Global Options</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="eyebrow">A moment of peace</div>
+      <h1>Find peace through<br><span>the Holy Quran</span></h1>
+      <p class="intro">Listen to beautiful Quran recitations, choose your favorite Surah and enjoy a peaceful moment of reflection.</p>
+      <a class="button" href="#listen">▶ Listen to Quran</a>
+      <a class="button outline" href="#surahs">Choose a Surah</a>
+      <a class="button outline" href="https://www.youtube.com/channel/UCt7vO-JYqax19_MZHloAk5g" target="_blank" rel="noopener noreferrer">Visit Our YouTube Channel ↗</a>
+
+      <div class="player-card" id="listen">
+        <div class="player-top">
+          <div><div class="kicker">Quran audio player</div><h2 id="nowTitle">Surah Al-Fatihah</h2></div>
+          <div class="arabic" id="arabicTitle" lang="ar" dir="rtl">الفاتحة</div>
+        </div>
+        <div class="selects">
+          <div><label for="countrySelect">Choose Your Country</label><select id="countrySelect"><option value="">Select your country</option><option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>American Samoa</option><option>Andorra</option><option>Angola</option><option>Anguilla</option><option>Antarctica</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Aruba</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bermuda</option><option>Bhutan</option><option>Bolivia</option><option>Bonaire, Sint Eustatius and Saba</option><option>Bosnia and Herzegovina</option><option>Botswana</option><option>Bouvet Island</option><option>Brazil</option><option>British Indian Ocean Territory</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burundi</option><option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Cayman Islands</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Christmas Island</option><option>Cocos (Keeling) Islands</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>Congo, The Democratic Republic of the</option><option>Cook Islands</option><option>Costa Rica</option><option>Croatia</option><option>Cuba</option><option>Curaçao</option><option>Cyprus</option><option>Czech Republic</option><option>Denmark</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option><option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Eswatini</option><option>Ethiopia</option><option>Falkland Islands (Malvinas)</option><option>Faroe Islands</option><option>Fiji</option><option>Finland</option><option>France</option><option>French Guiana</option><option>French Polynesia</option><option>French Southern Territories</option><option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Gibraltar</option><option>Greece</option><option>Greenland</option><option>Grenada</option><option>Guadeloupe</option><option>Guam</option><option>Guatemala</option><option>Guernsey</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option><option>Haiti</option><option>Heard Island and McDonald Islands</option><option>Holy See (Vatican City State)</option><option>Honduras</option><option>Hong Kong</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Isle of Man</option><option>Israel</option><option>Italy</option><option>Ivory Coast</option><option>Jamaica</option><option>Japan</option><option>Jersey</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>Kiribati</option><option>Kuwait</option><option>Kyrgyzstan</option><option>Laos</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option><option>Macao</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Martinique</option><option>Mauritania</option><option>Mauritius</option><option>Mayotte</option><option>Mexico</option><option>Micronesia, Federated States of</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Montserrat</option><option>Morocco</option><option>Mozambique</option><option>Myanmar</option><option>Namibia</option><option>Nauru</option><option>Nepal</option><option>Netherlands</option><option>New Caledonia</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>Niue</option><option>Norfolk Island</option><option>North Korea</option><option>North Macedonia</option><option>Northern Mariana Islands</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Palau</option><option>Palestine</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Pitcairn</option><option>Poland</option><option>Portugal</option><option>Puerto Rico</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Rwanda</option><option>Réunion</option><option>Saint Barthélemy</option><option>Saint Helena, Ascension and Tristan da Cunha</option><option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Martin (French part)</option><option>Saint Pierre and Miquelon</option><option>Saint Vincent and the Grenadines</option><option>Samoa</option><option>San Marino</option><option>Sao Tome and Principe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Sint Maarten (Dutch part)</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Georgia and the South Sandwich Islands</option><option>South Korea</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Svalbard and Jan Mayen</option><option>Sweden</option><option>Switzerland</option><option>Syria</option><option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Tokelau</option><option>Tonga</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option>Turkmenistan</option><option>Turks and Caicos Islands</option><option>Tuvalu</option><option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>United States Minor Outlying Islands</option><option>Uruguay</option><option>Uzbekistan</option><option>Vanuatu</option><option>Venezuela</option><option>Vietnam</option><option>Virgin Islands, British</option><option>Virgin Islands, U.S.</option><option>Wallis and Futuna</option><option>Western Sahara</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option><option>Åland Islands</option><option>Other / International</option></select></div>
+          <div><label for="surahSelect">Select Surah</label><select id="surahSelect"></select></div>
+          <div><label for="reciterSelect">Select Reciter</label>
+            <select id="reciterSelect">
+              <option value="7">Mishary Rashid Alafasy</option>
+              <option value="1">Abdul Basit (Murattal)</option>
+              <option value="3">Mahmoud Khalil Al-Husary</option>
+            </select>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="play" id="playBtn" aria-label="Play">▶</button>
+          <div class="track"><div><strong id="trackName">Surah Al-Fatihah</strong></div><audio id="audio" controls preload="none"></audio></div>
+        </div>
+        <div class="status" id="status" role="status">সূরা নির্বাচন করে Play চাপুন। অডিও চালাতে ইন্টারনেট সংযোগ লাগবে।</div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="surahs">
+      <div class="section-title"><div class="eyebrow">Explore</div><h2>Explore the Surahs</h2><p>Select any Surah to load it in the audio player.</p></div>
+      <div class="surah-list" id="surahList"></div>
+      <p class="notice">অডিও Quran.com-এর পাবলিক API থেকে লোড করার চেষ্টা করে। কোনো অডিও কাজ না করলে অন্য Select Reciter বা কিছুক্ষণ পরে আবার চেষ্টা করুন।</p>
+    </section>
+
+    <section class="section wrap" id="global"><div class="section-title"><div class="eyebrow">Worldwide Access</div><h2>Made for Quran Lovers Worldwide</h2><p>Choose your country above. The website interface is currently in English and Quran audio is available online worldwide, subject to regional internet access.</p><p><label for="languageSelect" style="display:inline-block;margin-right:8px">Preferred Language</label><select id="languageSelect" style="width:auto;min-width:180px;display:inline-block"><option>English</option><option>العربية (Arabic)</option><option>বাংলা (Bengali)</option><option>Bahasa Indonesia</option><option>اردو (Urdu)</option><option>Türkçe (Turkish)</option><option>Français (French)</option><option>Español (Spanish)</option><option>Other languages</option></select></p></div></section>
+
+    <section class="section wrap" id="about">
+      <div class="section-title"><div class="eyebrow">About</div><h2>Noor Relaxing Quran</h2><p>A simple online place to find peace through the recitation of the Holy Quran.</p></div>
+      <div class="features">
+        <div class="feature"><div class="icon">☾</div><h3>A Peaceful Experience</h3><p>A clean, calming design in deep blue and gold.</p></div>
+        <div class="feature"><div class="icon">♫</div><h3>Easy Audio Player</h3><p>Choose a Surah and reciter, then listen online.</p></div>
+        <div class="feature"><div class="icon">♡</div><h3>Works on Every Device</h3><p>Designed for mobile phones, tablets and desktop computers.</p></div>
+      </div>
+      <p class="notice">তোমার YouTube চ্যানেলের লিংক যোগ করতে HTML ফাইলে “YouTube Channel” লিংক বসানো যেতে পারে।</p>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© <span id="year"></span> Noor Relaxing Quran · Listen, reflect and find peace.</div></footer>
+
+  <script>
+    const chapters = [
+      {id:1, name:"Al-Fatihah", en:"Al-Fatihah", ar:""},
+      {id:2, name:"Al-Baqarah", en:"Al-Baqarah", ar:""},
+      {id:3, name:"Ali Imran", en:"Ali Imran", ar:""},
+      {id:4, name:"An-Nisa", en:"An-Nisa", ar:""},
+      {id:5, name:"Al-Maidah", en:"Al-Maidah", ar:""},
+      {id:6, name:"Al-Anam", en:"Al-Anam", ar:""},
+      {id:7, name:"Al-Araf", en:"Al-Araf", ar:""},
+      {id:8, name:"Al-Anfal", en:"Al-Anfal", ar:""},
+      {id:9, name:"At-Tawbah", en:"At-Tawbah", ar:""},
+      {id:10, name:"Yunus", en:"Yunus", ar:""},
+      {id:11, name:"Hud", en:"Hud", ar:""},
+      {id:12, name:"Yusuf", en:"Yusuf", ar:""},
+      {id:13, name:"Ar-Rad", en:"Ar-Rad", ar:""},
+      {id:14, name:"Ibrahim", en:"Ibrahim", ar:""},
+      {id:15, name:"Al-Hijr", en:"Al-Hijr", ar:""},
+      {id:16, name:"An-Nahl", en:"An-Nahl", ar:""},
+      {id:17, name:"Al-Isra", en:"Al-Isra", ar:""},
+      {id:18, name:"Al-Kahf", en:"Al-Kahf", ar:""},
+      {id:19, name:"Maryam", en:"Maryam", ar:""},
+      {id:20, name:"Ta-Ha", en:"Ta-Ha", ar:""},
+      {id:21, name:"Al-Anbiya", en:"Al-Anbiya", ar:""},
+      {id:22, name:"Al-Hajj", en:"Al-Hajj", ar:""},
+      {id:23, name:"Al-Muminun", en:"Al-Muminun", ar:""},
+      {id:24, name:"An-Nur", en:"An-Nur", ar:""},
+      {id:25, name:"Al-Furqan", en:"Al-Furqan", ar:""},
+      {id:26, name:"Ash-Shuara", en:"Ash-Shuara", ar:""},
+      {id:27, name:"An-Naml", en:"An-Naml", ar:""},
+      {id:28, name:"Al-Qasas", en:"Al-Qasas", ar:""},
+      {id:29, name:"Al-Ankabut", en:"Al-Ankabut", ar:""},
+      {id:30, name:"Ar-Rum", en:"Ar-Rum", ar:""},
+      {id:31, name:"Luqman", en:"Luqman", ar:""},
+      {id:32, name:"As-Sajdah", en:"As-Sajdah", ar:""},
+      {id:33, name:"Al-Ahzab", en:"Al-Ahzab", ar:""},
+      {id:34, name:"Saba", en:"Saba", ar:""},
+      {id:35, name:"Fatir", en:"Fatir", ar:""},
+      {id:36, name:"Ya-Sin", en:"Ya-Sin", ar:""},
+      {id:37, name:"As-Saffat", en:"As-Saffat", ar:""},
+      {id:38, name:"Sad", en:"Sad", ar:""},
+      {id:39, name:"Az-Zumar", en:"Az-Zumar", ar:""},
+      {id:40, name:"Ghafir", en:"Ghafir", ar:""},
+      {id:41, name:"Fussilat", en:"Fussilat", ar:""},
+      {id:42, name:"Ash-Shura", en:"Ash-Shura", ar:""},
+      {id:43, name:"Az-Zukhruf", en:"Az-Zukhruf", ar:""},
+      {id:44, name:"Ad-Dukhan", en:"Ad-Dukhan", ar:""},
+      {id:45, name:"Al-Jathiyah", en:"Al-Jathiyah", ar:""},
+      {id:46, name:"Al-Ahqaf", en:"Al-Ahqaf", ar:""},
+      {id:47, name:"Muhammad", en:"Muhammad", ar:""},
+      {id:48, name:"Al-Fath", en:"Al-Fath", ar:""},
+      {id:49, name:"Al-Hujurat", en:"Al-Hujurat", ar:""},
+      {id:50, name:"Qaf", en:"Qaf", ar:""},
+      {id:51, name:"Adh-Dhariyat", en:"Adh-Dhariyat", ar:""},
+      {id:52, name:"At-Tur", en:"At-Tur", ar:""},
+      {id:53, name:"An-Najm", en:"An-Najm", ar:""},
+      {id:54, name:"Al-Qamar", en:"Al-Qamar", ar:""},
+      {id:55, name:"Ar-Rahman", en:"Ar-Rahman", ar:""},
+      {id:56, name:"Al-Waqiah", en:"Al-Waqiah", ar:""},
+      {id:57, name:"Al-Hadid", en:"Al-Hadid", ar:""},
+      {id:58, name:"Al-Mujadilah", en:"Al-Mujadilah", ar:""},
+      {id:59, name:"Al-Hashr", en:"Al-Hashr", ar:""},
+      {id:60, name:"Al-Mumtahanah", en:"Al-Mumtahanah", ar:""},
+      {id:61, name:"As-Saff", en:"As-Saff", ar:""},
+      {id:62, name:"Al-Jumuah", en:"Al-Jumuah", ar:""},
+      {id:63, name:"Al-Munafiqun", en:"Al-Munafiqun", ar:""},
+      {id:64, name:"At-Taghabun", en:"At-Taghabun", ar:""},
+      {id:65, name:"At-Talaq", en:"At-Talaq", ar:""},
+      {id:66, name:"At-Tahrim", en:"At-Tahrim", ar:""},
+      {id:67, name:"Al-Mulk", en:"Al-Mulk", ar:""},
+      {id:68, name:"Al-Qalam", en:"Al-Qalam", ar:""},
+      {id:69, name:"Al-Haqqah", en:"Al-Haqqah", ar:""},
+      {id:70, name:"Al-Maarij", en:"Al-Maarij", ar:""},
+      {id:71, name:"Nuh", en:"Nuh", ar:""},
+      {id:72, name:"Al-Jinn", en:"Al-Jinn", ar:""},
+      {id:73, name:"Al-Muzzammil", en:"Al-Muzzammil", ar:""},
+      {id:74, name:"Al-Muddaththir", en:"Al-Muddaththir", ar:""},
+      {id:75, name:"Al-Qiyamah", en:"Al-Qiyamah", ar:""},
+      {id:76, name:"Al-Insan", en:"Al-Insan", ar:""},
+      {id:77, name:"Al-Mursalat", en:"Al-Mursalat", ar:""},
+      {id:78, name:"An-Naba", en:"An-Naba", ar:""},
+      {id:79, name:"An-Naziat", en:"An-Naziat", ar:""},
+      {id:80, name:"Abasa", en:"Abasa", ar:""},
+      {id:81, name:"At-Takwir", en:"At-Takwir", ar:""},
+      {id:82, name:"Al-Infitar", en:"Al-Infitar", ar:""},
+      {id:83, name:"Al-Mutaffifin", en:"Al-Mutaffifin", ar:""},
+      {id:84, name:"Al-Inshiqaq", en:"Al-Inshiqaq", ar:""},
+      {id:85, name:"Al-Buruj", en:"Al-Buruj", ar:""},
+      {id:86, name:"At-Tariq", en:"At-Tariq", ar:""},
+      {id:87, name:"Al-Ala", en:"Al-Ala", ar:""},
+      {id:88, name:"Al-Ghashiyah", en:"Al-Ghashiyah", ar:""},
+      {id:89, name:"Al-Fajr", en:"Al-Fajr", ar:""},
+      {id:90, name:"Al-Balad", en:"Al-Balad", ar:""},
+      {id:91, name:"Ash-Shams", en:"Ash-Shams", ar:""},
+      {id:92, name:"Al-Layl", en:"Al-Layl", ar:""},
+      {id:93, name:"Ad-Duha", en:"Ad-Duha", ar:""},
+      {id:94, name:"Ash-Sharh", en:"Ash-Sharh", ar:""},
+      {id:95, name:"At-Tin", en:"At-Tin", ar:""},
+      {id:96, name:"Al-Alaq", en:"Al-Alaq", ar:""},
+      {id:97, name:"Al-Qadr", en:"Al-Qadr", ar:""},
+      {id:98, name:"Al-Bayyinah", en:"Al-Bayyinah", ar:""},
+      {id:99, name:"Az-Zalzalah", en:"Az-Zalzalah", ar:""},
+      {id:100, name:"Al-Adiyat", en:"Al-Adiyat", ar:""},
+      {id:101, name:"Al-Qariah", en:"Al-Qariah", ar:""},
+      {id:102, name:"At-Takathur", en:"At-Takathur", ar:""},
+      {id:103, name:"Al-Asr", en:"Al-Asr", ar:""},
+      {id:104, name:"Al-Humazah", en:"Al-Humazah", ar:""},
+      {id:105, name:"Al-Fil", en:"Al-Fil", ar:""},
+      {id:106, name:"Quraysh", en:"Quraysh", ar:""},
+      {id:107, name:"Al-Maun", en:"Al-Maun", ar:""},
+      {id:108, name:"Al-Kawthar", en:"Al-Kawthar", ar:""},
+      {id:109, name:"Al-Kafirun", en:"Al-Kafirun", ar:""},
+      {id:110, name:"An-Nasr", en:"An-Nasr", ar:""},
+      {id:111, name:"Al-Masad", en:"Al-Masad", ar:""},
+      {id:112, name:"Al-Ikhlas", en:"Al-Ikhlas", ar:""},
+      {id:113, name:"Al-Falaq", en:"Al-Falaq", ar:""},
+      {id:114, name:"An-Nas", en:"An-Nas", ar:""}
+    ];
+    const $ = (id) => document.getElementById(id);
+    const audio = $("audio");
+    const surahSelect = $("surahSelect");
+    const reciterSelect = $("reciterSelect");
+    const statusEl = $("status");
+    $("year").textContent = new Date().getFullYear();
+
+    chapters.forEach(ch => {
+      const opt = document.createElement("option");
+      opt.value = ch.id; opt.textContent = `${ch.id}. ${ch.name}`;
+      surahSelect.appendChild(opt);
+    });
+
+    function selectedChapter() { return chapters.find(c => c.id === Number(surahSelect.value)) || chapters[0]; }
+    function updateTitle() {
+      const ch = selectedChapter();
+      $("nowTitle").textContent = `Surah ${ch.name}`;
+      $("trackName").textContent = `Surah ${ch.name}`;
+      $("arabicTitle").textContent = ch.ar;
+    }
+    function loadAudio(autoplay=false) {
+      const ch = selectedChapter();
+      updateTitle();
+      statusEl.textContent = "Finding audio…";
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+      const reciter = reciterSelect.value;
+      fetch(`https://api.quran.com/api/v4/chapter_recitations/${reciter}/${ch.id}`)
+        .then(r => { if (!r.ok) throw new Error("Audio request failed"); return r.json(); })
+        .then(data => {
+          const file = data && data.audio_file && data.audio_file.audio_url;
+          if (!file) throw new Error("No audio URL returned");
+          audio.src = file;
+          audio.load();
+          statusEl.textContent = "Audio is ready. Press Play.";
+          if (autoplay) audio.play().catch(() => statusEl.textContent = "Audio is ready. Press Play on the player.");
+        })
+        .catch(() => {
+          statusEl.textContent = "এই অডিওটি এখন লোড হয়নি। ইন্টারনেট পরীক্ষা করুন বা অন্য Select Reciter।";
+        });
+    }
+    $("playBtn").addEventListener("click", () => {
+      if (audio.src && !audio.paused) audio.pause();
+      else if (audio.src) audio.play().catch(() => {});
+      else loadAudio(true);
+    });
+    audio.addEventListener("play", () => $("playBtn").textContent = "Ⅱ");
+    audio.addEventListener("pause", () => $("playBtn").textContent = "▶");
+    audio.addEventListener("error", () => { statusEl.textContent = "Audio could not be played. Try selecting another reciter."; });
+    surahSelect.addEventListener("change", () => loadAudio(false));
+    reciterSelect.addEventListener("change", () => loadAudio(false));
+
+    const list = $("surahList");
+    chapters.forEach(ch => {
+      const btn = document.createElement("button");
+      btn.className = "surah";
+      btn.innerHTML = `<span><strong>${ch.id}. ${ch.name}</strong><small>Listen to Surah ${ch.name}</small></span>`;
+      btn.addEventListener("click", () => {
+        surahSelect.value = ch.id;
+        updateTitle();
+        loadAudio(false);
+        $("listen").scrollIntoView({behavior:"smooth", block:"center"});
+      });
+      list.appendChild(btn);
+    });
+    surahSelect.value = "1";
+    updateTitle();
+  </script>
+</body>
+</html>
